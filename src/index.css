@@ -59,6 +59,12 @@
 .icon {
   width: 100px;
 }
+.icon-2{
+  width: 100px;
+  /* color: red; */
+  /* background-color: red; */
+}
+
 
 .image {
   max-width: 450px;
@@ -75,7 +81,8 @@
 
 .button {
   width: 120px;
-  height: 60px;
+  height: 40px;
+  min-height: 40px;
   border-radius: 10px;
   background-color: #2F80ED;
   color: #fff;
@@ -123,4 +130,26 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.content-copy {
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.input-copy {
+  border: none;
+  height: 30px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.button-copy {
+  width: 90px;
+  height: 30px;
+  background-color: #2F80ED;
+  color: #fff;
+  border: none;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
 }

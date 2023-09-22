@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState } from 'react'
 import fileImage from './assets/file-image.svg'
+import check from './assets/circle-check-filled.svg'
 import './App.css'
 
 function App() {
@@ -53,8 +54,11 @@ function App() {
     <>
       <div className='main'>
         <div className='main-container'>
-          <p className='title'>Upload your image</p>
-          <p className='subtitle'>File should be Jpeg, Png...</p>
+          {image && (<img src={check} className="icon-2" alt="Upload your image..."/>)}
+          {image ? (<p className='title'>Uploaded Suceessfully!</p>) : (<p className='title'>Upload your image</p>)}
+          {/* <p className='title'>Upload your image</p> */}
+          {image ? (<p className='subtitle'></p>) : (<p className='subtitle'>File should be Jpeg, Png...</p>)}
+          {/* <p className='subtitle'>File should be Jpeg, Png...</p> */}
           <div className={image ? 'container-image' : 'container'} onDragOver={onDragOver} onDrop={onDrop}>
             {image ? (
             <img className='image' src={typeof image === 'string' ? image : undefined} alt="Preview" />
@@ -65,9 +69,23 @@ function App() {
               </>
             )}
           </div>
-          <p className='label-or'>Or</p>
+          {/* <p className='label-or'>Or</p> */}
+          {image ? (<p className='label-or'></p>) : (<p className='label-or'>Or</p>)}
           <input id="fileInput" type="file" onChange={handleChange} style={{ display: 'none' }}  />
-          <button className='button' onClick={() => document.getElementById('fileInput')?.click()}>Choose a file</button>
+          {image ? (<p className='label-or'></p>) : ( <button className='button' onClick={() => document.getElementById('fileInput')?.click()}>Choose a file</button>)}
+          {image ?
+            (
+              <div className='content-copy'>
+                <input type='text' className='input-copy'/>
+                <button className='button-copy'>Copy</button>
+              </div>
+            ) 
+            : 
+            (
+              <p className='label-or'></p>
+            )
+          }
+          {/* <button className='button' onClick={() => document.getElementById('fileInput')?.click()}>Choose a file</button> */}
         </div>
       </div>
       <div id='main-modal' className='hidden'>
